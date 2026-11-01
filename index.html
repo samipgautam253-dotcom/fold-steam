@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fold &amp; Steam Momo House — Kathmandu</title>
+<meta name="description" content="Fold &amp; Steam Momo House in Kathmandu — hand-folded momos, open daily 9 AM–9 PM. Concept design with sample content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#211B15;
+    --bg-dark-2:#2A2319;
+    --bg-cream:#F6EEDF;
+    --bg-cream-2:#EEE1C6;
+    --ink:#2A2019;
+    --ink-soft:#6B5D4C;
+    --paper:#F3E8D6;
+    --paper-soft:#B9A886;
+    --gold:#C98A2B;
+    --gold-bright:#DDA43F;
+    --brick:#A63E2A;
+    --max-w:1120px;
+    --serif:'Fraunces', serif;
+    --sans:'Karla', sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--bg-cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:600;
+    line-height:1.15;
+    margin:0;
+  }
+
+  p{margin:0;}
+
+  a{color:inherit;}
+
+  img{display:block;max-width:100%;}
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+
+  :focus-visible{
+    outline:2px solid var(--gold-bright);
+    outline-offset:3px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0.85rem 1.6rem;
+    border-radius:999px;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.95rem;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    transition:background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--bg-dark);
+  }
+  .btn-primary:hover{background:var(--gold-bright);}
+  .btn-secondary{
+    background:transparent;
+    border-color:var(--paper-soft);
+    color:var(--paper);
+  }
+  .btn-secondary:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.9rem;
+    margin-top:1.75rem;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--bg-dark);
+    color:var(--paper);
+    padding:3.5rem 0 3rem;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:flex;
+    flex-direction:column-reverse;
+    align-items:center;
+    gap:2.75rem;
+    text-align:center;
+  }
+  .hero-text{max-width:560px;}
+  .kicker{
+    font-size:0.9rem;
+    color:var(--paper-soft);
+    margin-bottom:0.9rem;
+    letter-spacing:0.02em;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 7vw, 3.6rem);
+    color:var(--paper);
+  }
+  .tagline{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(1.05rem, 3vw, 1.3rem);
+    color:var(--paper);
+    margin-top:1.1rem;
+    max-width:34ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero-meta{
+    margin-top:1.75rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .rating-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.65rem;
+  }
+  .rating-circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1.5px solid var(--gold);
+    color:var(--gold-bright);
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1rem;
+    flex-shrink:0;
+  }
+  .rating-text{
+    font-size:0.9rem;
+    color:var(--paper-soft);
+  }
+  .hours-line{
+    font-size:0.9rem;
+    color:var(--paper-soft);
+  }
+  .hero .cta-row{justify-content:center;}
+
+  .hero-photo{flex-shrink:0;}
+  .photo-ring{
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    overflow:hidden;
+    border:6px solid var(--gold);
+    box-shadow:0 24px 45px -18px rgba(0,0,0,0.7);
+    animation:rise 0.7s ease-out both;
+  }
+  .photo-ring img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 62%;
+  }
+
+  @keyframes rise{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .photo-ring, .hero-text > *{animation:none !important;}
+  }
+  .hero-text > *{animation:rise 0.7s ease-out both;}
+  .hero-text > *:nth-child(1){animation-delay:0s;}
+  .hero-text > *:nth-child(2){animation-delay:0.08s;}
+  .hero-text > *:nth-child(3){animation-delay:0.16s;}
+  .hero-text > *:nth-child(4){animation-delay:0.24s;}
+  .hero-text > *:nth-child(5){animation-delay:0.32s;}
+
+  /* ---------- Story ---------- */
+  .story{
+    padding:4rem 0;
+  }
+  .story .wrap{
+    display:flex;
+    flex-direction:column;
+    gap:2.25rem;
+  }
+  .story-photo img{
+    border-radius:10px;
+    width:100%;
+    height:auto;
+    object-fit:cover;
+    max-height:340px;
+  }
+  .story-text h2{
+    font-size:clamp(1.7rem, 4vw, 2.2rem);
+    margin-bottom:1rem;
+  }
+  .story-text p{
+    max-width:62ch;
+    color:var(--ink);
+  }
+  .story-text p + p{margin-top:1rem;}
+
+  /* ---------- Menu highlights ---------- */
+  .menu-highlights{
+    background:var(--bg-cream-2);
+    padding:4rem 0;
+  }
+  .menu-highlights h2{
+    font-size:clamp(1.7rem, 4vw, 2.2rem);
+  }
+  .section-intro{
+    max-width:56ch;
+    margin-top:1rem;
+    color:var(--ink-soft);
+  }
+  .dish-list{
+    list-style:none;
+    margin:2.25rem 0 0;
+    padding:0;
+    border-top:1px solid var(--paper-soft);
+  }
+  .dish-list li{
+    padding:1.5rem 0;
+    border-bottom:1px solid var(--paper-soft);
+  }
+  .dish-list h3{
+    font-size:1.2rem;
+    margin-bottom:0.4rem;
+  }
+  .dish-list p{
+    color:var(--ink-soft);
+    max-width:54ch;
+  }
+  @media (min-width:760px){
+    .dish-list li{
+      display:grid;
+      grid-template-columns:230px 1fr;
+      gap:2rem;
+      align-items:baseline;
+    }
+    .dish-list h3{margin-bottom:0;}
+  }
+
+  /* ---------- Reviews ---------- */
+  .reviews{
+    padding:4rem 0;
+  }
+  .reviews h2{
+    font-size:clamp(1.7rem, 4vw, 2.2rem);
+    margin-bottom:2rem;
+  }
+  .review-line{
+    font-family:var(--serif);
+    font-size:1.2rem;
+    line-height:1.55;
+    padding-left:1.1rem;
+    border-left:3px solid var(--brick);
+    max-width:600px;
+  }
+  .review-line + .review-line{margin-top:1.75rem;}
+  .review-source{
+    margin-top:2rem;
+    font-family:var(--sans);
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Visit ---------- */
+  .visit{
+    background:var(--bg-dark);
+    color:var(--paper);
+    padding:4rem 0;
+  }
+  .visit h2{
+    font-size:clamp(1.7rem, 4vw, 2.2rem);
+    color:var(--paper);
+    margin-bottom:2rem;
+  }
+  .visit-grid{
+    display:flex;
+    flex-direction:column;
+    gap:2.5rem;
+  }
+  .visit-details p{
+    margin-bottom:1.25rem;
+    color:var(--paper);
+  }
+  .visit-details strong{
+    display:block;
+    font-family:var(--serif);
+    font-weight:600;
+    color:var(--gold-bright);
+    margin-bottom:0.25rem;
+    font-size:0.95rem;
+  }
+  .visit-details a{text-decoration:underline; text-decoration-color:var(--paper-soft);}
+  .visit-map iframe{
+    width:100%;
+    height:280px;
+    border:0;
+    border-radius:10px;
+  }
+
+  @media (min-width:860px){
+    .hero-inner{
+      flex-direction:row;
+      text-align:left;
+      justify-content:space-between;
+      gap:3.5rem;
+    }
+    .hero-text{max-width:520px;}
+    .tagline{margin-left:0; margin-right:0;}
+    .hero-meta{align-items:flex-start;}
+    .hero .cta-row{justify-content:flex-start;}
+    .photo-ring{width:320px; height:320px; border-width:8px;}
+
+    .story .wrap{
+      flex-direction:row;
+      align-items:center;
+    }
+    .story-photo{flex:0 0 42%;}
+    .story-photo img{max-height:none;}
+    .story-text{flex:1;}
+
+    .visit-grid{
+      flex-direction:row;
+      align-items:flex-start;
+    }
+    .visit-details{flex:0 0 40%;}
+    .visit-map{flex:1;}
+    .visit-map iframe{height:340px;}
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--bg-cream-2);
+    padding:2.5rem 0 6rem;
+    text-align:center;
+  }
+  footer p{font-size:0.9rem; color:var(--ink-soft);}
+  footer .fine-print{
+    margin-top:0.5rem;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Mobile action bar ---------- */
+  .mobile-bar{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    display:flex;
+    gap:0.75rem;
+    padding:0.75rem 1rem;
+    background:var(--bg-dark-2);
+    border-top:1px solid rgba(255,255,255,0.08);
+    z-index:20;
+  }
+  .mobile-bar .btn{flex:1;}
+  @media (min-width:860px){
+    .mobile-bar{display:none;}
+  }
+  .photo-ring svg{width:100%;height:100%;display:block;}
+  .story-photo svg{width:100%;height:auto;display:block;border-radius:10px;max-width:420px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="kicker">Kathmandu, Nepal</p>
+      <h1>Fold &amp; Steam Momo House</h1>
+      <p class="tagline">Hand-folded momos, steamed to order — a small kitchen with a big appetite.</p>
+      <div class="hero-meta">
+        <div class="rating-badge">
+          <span class="rating-circle">4.6</span>
+          <span class="rating-text">sample rating</span>
+        </div>
+        <p class="hours-line">Open every day, 9 AM – 9 PM</p>
+      </div>
+      <div class="cta-row">
+        <a href="tel:+9779800000000" class="btn btn-primary">Call the restaurant</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Kathmandu%2C+Nepal" class="btn btn-secondary" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-ring">
+        <svg viewBox="0 0 240 240" role="img" aria-label="Illustration of a ring of steamed momos around a bowl of achar"><rect width="240" height="240" fill="#E7DCC4"/><circle cx="120" cy="120" r="116" fill="#F8F2E4"/><circle cx="120" cy="120" r="50" fill="#6B3B1F"/><circle cx="120" cy="120" r="38" fill="#8A4B22" opacity=".7"/><g transform="translate(120.0 44.0) rotate(0)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(168.9 61.8) rotate(40)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(194.8 106.8) rotate(80)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(185.8 158.0) rotate(120)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(146.0 191.4) rotate(160)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(94.0 191.4) rotate(200)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(54.2 158.0) rotate(240)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(45.2 106.8) rotate(280)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(71.1 61.8) rotate(320)"><ellipse rx="26" ry="22" fill="#F3E6CB" stroke="#D2BC8F" stroke-width="2"/><path d="M-12 -4 Q-6 -14 0 -4 Q6 -14 12 -4 M-9 3 Q0 -6 9 3" fill="none" stroke="#D2BC8F" stroke-width="2" stroke-linecap="round"/></g></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="story">
+    <div class="wrap">
+      <div class="story-photo">
+        <svg viewBox="0 0 331 416" role="img" aria-label="Illustration of a momo house sign glowing above a stairway at night"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17112B"/><stop offset="1" stop-color="#2A1D1A"/></linearGradient></defs><rect width="331" height="416" fill="url(#sk)"/><rect x="30" y="60" width="271" height="356" fill="#241A1C"/><g fill="#3A2C2C"><rect x="52" y="82" width="46" height="62"/><rect x="142" y="82" width="46" height="62"/><rect x="232" y="82" width="46" height="62"/></g><g fill="#F2B84B" opacity=".55"><rect x="56" y="86" width="38" height="54"/><rect x="236" y="86" width="38" height="54"/></g><rect x="66" y="190" width="199" height="52" rx="6" fill="#F2B84B"/><rect x="72" y="196" width="187" height="40" rx="3" fill="none" stroke="#7A4A12" stroke-width="2"/><text x="165.5" y="222" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="20" fill="#3B2208">FOLD &amp; STEAM</text><rect x="120" y="262" width="91" height="154" fill="#120D12"/><g fill="#3A2C2C"><rect x="120" y="300" width="91" height="8"/><rect x="120" y="332" width="91" height="8"/><rect x="120" y="364" width="91" height="8"/><rect x="120" y="396" width="91" height="8"/></g><circle cx="165" cy="256" r="6" fill="#F2B84B"/></svg>
+      </div>
+      <div class="story-text">
+        <h2>Easy to miss, hard to forget</h2>
+        <p>Up a short flight of stairs off a quiet Kathmandu lane, Fold &amp; Steam doesn't shout for attention. Regulars just know the glowing sign and the smell of the steamer.</p>
+        <p>Inside, it's simple: a cozy dining room built around one specialty that keeps people climbing those stairs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-highlights">
+    <div class="wrap">
+      <h2>What's on the table</h2>
+      <p class="section-intro">The menu covers the usual Nepali-Tibetan favorites, but people come here for one dish in particular.</p>
+      <ul class="dish-list">
+        <li>
+          <h3>The house momo</h3>
+          <p>Hand-folded and steamed to order, served with a dark, well-spiced achar for dipping. It's the dish the rest of the menu is built around.</p>
+        </li>
+        <li>
+          <h3>Buff specialties</h3>
+          <p>Buffalo meat dishes are a mainstay here, cooked home-style at prices that keep locals coming back.</p>
+        </li>
+        <li>
+          <h3>Chowmein &amp; noodles</h3>
+          <p>A reliable plate to share alongside the momo — the two are usually ordered together.</p>
+        </li>
+        <li>
+          <h3>Milk tea</h3>
+          <p>Strong, sweet, and served the way it should be — best with a plate of something fried.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="wrap">
+      <h2>What regulars say</h2>
+      <p class="review-line">Regulars rave about the juicy filling, and an achar rich enough to eat on its own.</p>
+      <p class="review-line">It fills up fast on weekends, so come early — nobody minds the wait once the plate arrives.</p>
+      <p class="review-source">Sample reviews written for this concept design</p>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <h2>Find us</h2>
+      <div class="visit-grid">
+        <div class="visit-details">
+          <p>
+            <strong>Address</strong>
+            12 Sample Lane<br>Kathmandu, Nepal
+          </p>
+          <p>
+            <strong>Phone</strong>
+            <a href="tel:+9779800000000">+977 98-0000-0000</a>
+          </p>
+          <p>
+            <strong>Hours</strong>
+            Every day, 9:00 AM – 9:00 PM
+          </p>
+          <div class="cta-row">
+            <a href="tel:+9779800000000" class="btn btn-primary">Call the restaurant</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kathmandu%2C+Nepal" class="btn btn-secondary" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
+        <div class="visit-map">
+          <iframe src="https://www.google.com/maps?q=Kathmandu,Nepal&z=12&output=embed" title="Map of Kathmandu" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Fold &amp; Steam Momo House — Kathmandu</p>
+  <p class="fine-print">Concept design with sample content. The name, contact details and reviews are placeholders, not a real business.</p>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+9779800000000" class="btn btn-primary">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Kathmandu%2C+Nepal" class="btn btn-secondary" target="_blank" rel="noopener">Directions</a>
+</div>
+
+</body>
+</html>
